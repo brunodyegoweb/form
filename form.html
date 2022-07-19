@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="_css/form.css">
+    <script>
+        function calc_total(){
+            var qnt = parseInt(document.getElementById('cquant').value);
+            tot = qnt*1500;
+            document.getElementById("cTot").value = tot;
+        }
+    </script>
+    <title>Formulário</title>
+</head>
+<body>
+    <form  method="post" idf="Contato" action="bruno.ufra@yahoo.com.br" oninput="cal_total()">
+        
+            <fieldset id="usuario"><legend>Identificação do Usuário</legend>
+                <label for = "cNome">Nome: </label> <input type="text" name = "tNome" id = "cNome" size="20" maxlength="40" placeholder="Nome completo">
+                <br/>  
+                <label for ="cSenha">Senha: </label> <input type="password" name = "tSenha" id = "cSenha" size="20" maxlength="8" placeholder="8 digitos">
+                <br/>
+                <label for = cMail>E-mail: </label> <input type="email" name = "tMail" id = "cMail" size="20" maxlength="40" placeholder="joao@exemplo.com">
+           
+            <br/>   
+            <fieldset id="sexo"><legend>Sexo</legend>
+                <label for = "cMasc">Masculono</label> <input type="radio" name = "tMasc" id = "cMasc ">
+                <label for = "cFem">Feminino</label> <input type="radio" name = "tMasc" id = "cFem "></fieldset>
+                <br/>
+                <label for="cData">Data de Nacsimento: </label> <input type="date" name="tdata" id="cdata">
+            </fieldset>    
+        
+        <br/>
+            <fieldset id="endereco"><legend>Endereço do Usuário</legend>
+                <p><label for="cRua">Logradouro: </label> <input type="text" name = "tRua" id = "cRua" size="30" maxlength="20"></p>
+                <p><label for="cNum">Número: </label> <input type="number" name="tNum" id="cNum" size="20" maxlength="80" ></p>
+                <p><label for="cEst">Estado: </label><select name="tEst" id="cEst"></p>
+                <optgroup label = "Região Norte">
+                    <option value="PA">Pará</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="AC">Acre</option>                 
+                </optgroup>
+                <optgroup label ="Região Sul">
+                    <option value="PR">Paraná</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="RS">Rio Grande do Sul</option></select>   
+                </optgroup>
+                <br><br>
+                  <label for="cCid">Cidade: </label> <input type="text" name = "tCid" id ="cCid" size = "20"maxlength = "80" placeholder = "Sua Cidade"  list="cidades">
+                <datalist id = "cidades">
+                    <option value="Balneário Camboriú"></option>
+                    <option value="Camboriú"></option>
+                    <option value="Itajaí"></option>
+                    <option value="Joenvile"></option>
+                </datalist>
+            </fieldset>
+            <br/>
+            <fieldset id="msg"><legend>Avaliação do Usuário</legend>
+                <p>Ruim <input type="range" name="tRang" id="cRang">Ótimo</p>
+                <label for="cMsg">Mensagem:</label> <textarea name="tMsg" id="cmsg" cols="30" rows="10" placeholder="digite a sua mensagem ..."></textarea>
+                <br/><br/>
+            </fieldset>    
+                <fieldset id="pedido"><legend>Faça seu Pedido</legend>
+                    <p> <input type="checkbox" name="tped" id="cPed" checked>
+                    <label for="cPed">Gostaria de Fazer um Pedido</label></p>
+                    <p><label for="cCor">Cor: </label> <input type="color" name="tCor" id="cCor" value="#0000ff"></p>
+                    <p><label for="cQuant">Quantidade: </label> <input type="number" name="tQuant" id="cQuant" min="0" max="5" value="0"></p>
+                    <p><label for="cTot">Preço Total: R$</label> <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly></p>
+           
+            </fieldset> 
+            <input type="image" name="tBut" src="_imagens/botao-enviar.png">   
+    </form>
+</body>
+</html>
